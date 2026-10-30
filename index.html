@@ -1,76 +1,717 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaamly — Get work done</title>
-  <meta name="description" content="Kaamly helps you get work done.">
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kyrodi — Everyday Services, with a Personal Touch</title>
+  <meta name="description" content="Kyrodi brings trusted, doorstep services to your housing society: vehicle washing, clothes ironing and more. Book in seconds and install it on your phone, no app store needed.">
+  <link rel="canonical" href="https://kyrodi.com/">
+  <meta name="theme-color" content="#0F3D3A">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph / WhatsApp / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kyrodi">
+  <meta property="og:title" content="Kyrodi — Everyday Services, with a Personal Touch">
+  <meta property="og:description" content="Vehicle washing, clothes ironing and more, right at your doorstep by trusted local providers in your society.">
+  <meta property="og:url" content="https://kyrodi.com/">
+  <meta property="og:image" content="https://kyrodi.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kyrodi: Everyday Services, with a Personal Touch">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kyrodi — Everyday Services, with a Personal Touch">
+  <meta name="twitter:description" content="Doorstep vehicle washing and clothes ironing for your society, by trusted local providers.">
+  <meta name="twitter:image" content="https://kyrodi.com/images/og-image.jpg">
+
+  <!-- Icons & PWA -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Kyrodi">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <link rel="preload" as="image" href="images/photos/hero-car-foam.jpg" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kyrodi.com/#org",
+        "name": "Kyrodi",
+        "url": "https://kyrodi.com/",
+        "logo": "https://kyrodi.com/images/icons/icon-512.png",
+        "slogan": "Everyday Services, with a Personal Touch."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kyrodi.com/#website",
+        "url": "https://kyrodi.com/",
+        "name": "Kyrodi",
+        "publisher": { "@id": "https://kyrodi.com/#org" },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "ItemList",
+        "name": "Kyrodi services",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Vehicle Washing", "provider": { "@id": "https://kyrodi.com/#org" }, "description": "Car and bike washing at your society parking spot." } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Clothes Ironing", "provider": { "@id": "https://kyrodi.com/#org" }, "description": "Doorstep pickup, pressing and drop of your clothes." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand"><img src="images/logo.png" alt="">Kaamly</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <nav class="nav">
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16.5V19a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.5M16 17.5V19a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.5M3.5 11.5 5.6 6.6A2 2 0 0 1 7.4 5.5h9.2a2 2 0 0 1 1.8 1.1l2.1 4.9M3.5 11.5h17a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1ZM6.5 14h1M16.5 14h1"/></symbol>
+      <symbol id="i-iron" viewBox="0 0 24 24"><path d="M3 17.5h15.5a2 2 0 0 0 2-2v-.5a6 6 0 0 0-6-6H9.2a3 3 0 0 0-2.9 2.2L3 17.5ZM9 9V7a2 2 0 0 1 2-2h7.5M7 14h.01M10 14h.01M13 14h.01"/></symbol>
+      <symbol id="i-plant" viewBox="0 0 24 24"><path d="M7 14h10l-1.2 6.2a1 1 0 0 1-1 .8H9.2a1 1 0 0 1-1-.8L7 14ZM12 14V9M12 9c0-3 2-5 6-5 0 3.5-2 5-6 5ZM12 11c0-2.5-1.7-4-5-4 0 2.8 1.7 4 5 4Z"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5 13.6 9a2 2 0 0 0 1.4 1.4l5.5 1.6-5.5 1.6a2 2 0 0 0-1.4 1.4L12 20.5 10.4 15A2 2 0 0 0 9 13.6L3.5 12 9 10.4A2 2 0 0 0 10.4 9L12 3.5ZM19 3v3M20.5 4.5h-3"/></symbol>
+      <symbol id="i-door" viewBox="0 0 24 24"><path d="M4 21h16M6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21M14.5 12.5h.01"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 8.2 7 9.5 4-1.3 7-5.1 7-9.5V6l-7-3ZM9 12l2 2 4-4"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l5-3v16M10 21V3l9 4v14M13.5 9h2M13.5 12.5h2M13.5 16h2M7 11h.5M7 14.5h.5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 8.8 5.5c1.4 0 2.5.7 3.2 1.8.7-1.1 1.8-1.8 3.2-1.8a4.3 4.3 0 0 1 4.3 4.3C19.5 15.4 12 20 12 20Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-tap" viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11l4.6.9a2 2 0 0 1 1.6 2.2l-.6 4.6a2 2 0 0 1-2 1.8h-4.8a2 2 0 0 1-1.6-.8L5.6 15.4a1.5 1.5 0 0 1 2.2-2L9 14.5"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 12h8M8 15h5"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4M8.5 14h.01M12 14h.01M15.5 14h.01"/></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M5 10h11v4a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5v-4ZM16 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c0 1 1 1.2 1 2.2S8 7 8 7M11.5 3.5c0 1 1 1.2 1 2.2s-1 1.3-1 1.3"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10.5 21 19 10h-6L13 3Z"/></symbol>
+      <symbol id="i-feather" viewBox="0 0 24 24"><path d="M19 5c-5 0-11 3.5-11 11v3M8 16h5.5c3 0 5.5-4.5 5.5-11M5 19l3-3"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></symbol>
+      <symbol id="i-share-ios" viewBox="0 0 24 24"><path d="M12 3.5v11M8 7.5l4-4 4 4M8.5 10.5H7a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-1.5"/></symbol>
+      <symbol id="i-plus-square" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M12 8.5v7M8.5 12h7"/></symbol>
+      <symbol id="i-dots-v" viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="18.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-android" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.6 9.48 19.44 6.3a.38.38 0 0 0-.66-.38l-1.86 3.22a11.5 11.5 0 0 0-9.84 0L5.22 5.92a.38.38 0 1 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52ZM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></symbol>
+      <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.37 12.73c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.15-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.2.77 1.11 1.68 2.35 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.73c1.25-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.46-3.72ZM14.08 5.98c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.39-.59.68-1.11 1.78-.97 2.83 1.02.08 2.07-.52 2.71-1.29Z"/></symbol>
+      <symbol id="i-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="M12 8.4h8.2M8.9 13.8 4.8 6.7M15.1 13.8l-4.1 7.1"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#0F3D3A"/><g fill="none" stroke="#FBF7F0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M36 26v48M36 57l23-24M47 46l19 28"/></g><circle cx="66.5" cy="26.5" r="6" fill="#E8A33D"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Kyrodi home">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="brand-word">Kyrodi</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Kyrodi</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#install">Get the app</a></li>
         </ul>
+        <a class="btn btn-primary nav-cta-mobile" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm header-cta" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi</a>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <svg class="ic ic-open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="ic ic-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Get work done, simply.</h1>
-        <p>Kaamly brings your tasks, people, and progress together in one place, so nothing falls through the cracks.</p>
-        <a href="contact.html" class="btn btn-light">Get in touch</a>
-      </div>
-    </section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow-dot"></span>Made for housing societies</p>
+          <h1 class="hero-title" data-reveal>
+            Everyday Services, with a <em class="touch">Personal&nbsp;Touch<svg class="touch-line" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16C60 6 140 4 296 12" /></svg></em>.
+          </h1>
+          <p class="hero-lead" data-reveal>Your car washed where it's parked. Your clothes pressed and back at your door. Kyrodi brings trusted local helpers from your own society to the little chores that eat up your day.</p>
+          <div class="hero-ctas" data-reveal>
+            <a class="btn btn-primary btn-lg" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#install"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> Install on your phone</a>
+          </div>
+          <ul class="hero-trust" data-reveal>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg> Trusted local providers</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-door"/></svg> Right at your doorstep</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> No app store needed</li>
+          </ul>
+        </div>
 
-    <section class="section">
-      <div class="container">
-        <h2>Why Kaamly</h2>
-        <p class="lead">A short line about what makes Kaamly different. Replace this with your own pitch.</p>
-        <div class="grid">
-          <div class="card">
-            <div class="icon">&#9889;</div>
-            <h3>Fast</h3>
-            <p>Describe your first key benefit here in a sentence or two.</p>
+        <div class="hero-visual" aria-hidden="true">
+          <figure class="hero-photo hero-photo--main">
+            <img src="images/photos/hero-car-foam.jpg" width="1000" height="667" alt="" fetchpriority="high">
+          </figure>
+          <figure class="hero-photo hero-photo--side">
+            <img src="images/photos/hero-ironing.jpg" width="700" height="1050" alt="" loading="lazy">
+          </figure>
+
+          <div class="phone phone--ios phone--hero">
+            <div class="phone__screen">
+              <div class="sb"><span>9:41</span><span class="sb-island"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+              <div class="mini-app mini-app--hero">
+                <div class="ma-top">
+                  <svg class="ma-logo"><use href="#i-logo"/></svg>
+                  <div>
+                    <p class="ma-hello">Good morning</p>
+                    <p class="ma-flat">Tower B · Flat 1204</p>
+                  </div>
+                </div>
+                <p class="ma-h">What can we take care of today?</p>
+                <div class="ma-tiles">
+                  <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                  <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                </div>
+                <div class="ma-card">
+                  <span class="ma-badge">Upcoming</span>
+                  <p class="ma-card-t">Car wash · Parking P2-17</p>
+                  <p class="ma-card-s"><svg><use href="#i-clock"/></svg> Tomorrow, 7:00 AM</p>
+                </div>
+                <div class="ma-card ma-card--soft">
+                  <p class="ma-card-t">Ironing pickup</p>
+                  <p class="ma-card-s"><svg><use href="#i-door"/></svg> At your door, 6:30 PM</p>
+                </div>
+                <div class="ma-btn">Book a service</div>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <div class="icon">&#129309;</div>
-            <h3>Reliable</h3>
-            <p>Describe your second key benefit here in a sentence or two.</p>
+
+          <div class="float-card float-card--a">
+            <span class="fc-icon fc-icon--green"><svg><use href="#i-check"/></svg></span>
+            <div><strong>Car washed</strong><small>Shining &amp; ready, 7:42 AM</small></div>
           </div>
-          <div class="card">
-            <div class="icon">&#127793;</div>
-            <h3>Simple</h3>
-            <p>Describe your third key benefit here in a sentence or two.</p>
+          <div class="float-card float-card--b">
+            <span class="fc-icon fc-icon--gold"><svg><use href="#i-iron"/></svg></span>
+            <div><strong>12 clothes pressed</strong><small>Back at your door</small></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container" style="text-align:center">
-        <h2>Ready to get started?</h2>
-        <p class="lead">Tell us what you need and we'll get back to you.</p>
-        <a href="contact.html" class="btn btn-primary">Contact us</a>
+    <!-- RIBBON -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>Doorstep convenience</span><i>✦</i><span>Trusted local providers</span><i>✦</i><span>Made for your society</span><i>✦</i><span>Book in seconds</span><i>✦</i><span>No app store needed</span><i>✦</i>
+        <span>Doorstep convenience</span><i>✦</i><span>Trusted local providers</span><i>✦</i><span>Made for your society</span><i>✦</i><span>Book in seconds</span><i>✦</i><span>No app store needed</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Our Services</p>
+          <h2 id="services-title">Little chores, <em>lovingly</em> handled.</h2>
+          <p class="section-lead">Start with the everyday essentials. Each one is done carefully, on your schedule, by people who know your society.</p>
+        </header>
+
+        <div class="service-grid">
+          <article class="service-card" data-reveal>
+            <div class="service-media">
+              <img src="images/photos/vehicle-washing.jpg" width="1100" height="733" loading="lazy" alt="A service professional washing a foam-covered car with a sponge">
+              <span class="pill pill--live"><span class="live-dot"></span>Available now</span>
+            </div>
+            <div class="service-body">
+              <span class="service-icon"><svg aria-hidden="true"><use href="#i-car"/></svg></span>
+              <h3>Vehicle Washing</h3>
+              <p>Your car or bike, cleaned right where it's parked, before you've finished your morning chai.</p>
+              <ul class="ticks">
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Cars &amp; two-wheelers</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>At your parking spot</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Flexible scheduling</li>
+              </ul>
+              <a class="service-link" href="https://app.kyrodi.com" rel="noopener">Book a wash <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-media">
+              <img src="images/photos/clothes-ironing.jpg" width="1100" height="733" loading="lazy" alt="A woman carefully ironing a white shirt at home">
+              <span class="pill pill--live"><span class="live-dot"></span>Available now</span>
+            </div>
+            <div class="service-body">
+              <span class="service-icon service-icon--gold"><svg aria-hidden="true"><use href="#i-iron"/></svg></span>
+              <h3>Clothes Ironing</h3>
+              <p>Crisp, neatly folded clothes. Picked up from your door, pressed with care and brought back ready to wear.</p>
+              <ul class="ticks">
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Doorstep pickup &amp; drop</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pressed &amp; neatly folded</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>Track it in the app</li>
+              </ul>
+              <a class="service-link" href="https://app.kyrodi.com" rel="noopener">Book ironing <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <article class="service-card service-card--soon" data-reveal>
+            <div class="service-media">
+              <img src="images/photos/plant-care.jpg" width="1100" height="719" loading="lazy" alt="A hand watering a lush green houseplant with a white watering can">
+              <span class="pill pill--soon">Coming soon</span>
+            </div>
+            <div class="service-body">
+              <span class="service-icon service-icon--sage"><svg aria-hidden="true"><use href="#i-plant"/></svg></span>
+              <h3>Plant Care</h3>
+              <p>Watering, pruning and a little love for your balcony garden, especially when you're away.</p>
+              <p class="soon-note"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> Blooming soon in your society</p>
+            </div>
+          </article>
+
+          <article class="service-card service-card--more" data-reveal>
+            <div class="more-art" aria-hidden="true">
+              <span class="orb orb--1"><svg><use href="#i-sparkle"/></svg></span>
+              <span class="orb orb--2"><svg><use href="#i-heart"/></svg></span>
+              <span class="orb orb--3"><svg><use href="#i-building"/></svg></span>
+            </div>
+            <div class="service-body">
+              <span class="pill pill--soon pill--inline">On the way</span>
+              <h3>More everyday services</h3>
+              <p>We're growing with our communities. More helpful services for your home and lifestyle are on their way.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY KYRODI -->
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <div class="why-glow" aria-hidden="true"></div>
+      <div class="container why-grid">
+        <header class="why-head" data-reveal>
+          <p class="kicker kicker--light">Why Kyrodi</p>
+          <h2 id="why-title">Built for your society, <em>not</em> the whole city.</h2>
+          <p class="section-lead">Big platforms send whoever's nearest. Kyrodi works with familiar, trusted people who already serve your community, so every visit feels like a neighbour helping out.</p>
+          <a class="btn btn-gold" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </header>
+
+        <div class="why-cards">
+          <article class="why-card" data-reveal>
+            <span class="why-icon"><svg aria-hidden="true"><use href="#i-door"/></svg></span>
+            <h3>Convenience at your door</h3>
+            <p>No driving to a car wash, no hunting for the ironing person. It all comes to you, at a time that works for you.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <span class="why-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Trusted local providers</h3>
+            <p>Reliable helpers from in and around your society. Familiar faces you can trust inside your gates.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <span class="why-icon"><svg aria-hidden="true"><use href="#i-building"/></svg></span>
+            <h3>Society-first experience</h3>
+            <p>Built around towers, flats and parking spots, the way your community actually lives.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <span class="why-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+            <h3>The personal touch</h3>
+            <p>Care, not just a transaction. The small details are remembered, and every job is done like it's for family.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">How It Works</p>
+          <h2 id="how-title">Booked in under a minute. <em>Done</em> without a thought.</h2>
+        </header>
+        <ol class="how-steps">
+          <li class="how-step" data-reveal>
+            <span class="how-num">01</span>
+            <span class="how-icon"><svg aria-hidden="true"><use href="#i-tap"/></svg></span>
+            <h3>Open Kyrodi</h3>
+            <p>Tap the link or the Kyrodi icon on your home screen. No download, no sign-up hassle.</p>
+          </li>
+          <li class="how-step" data-reveal>
+            <span class="how-num">02</span>
+            <span class="how-icon"><svg aria-hidden="true"><use href="#i-list"/></svg></span>
+            <h3>Choose a service</h3>
+            <p>Pick a vehicle wash or ironing and add any special requests.</p>
+          </li>
+          <li class="how-step" data-reveal>
+            <span class="how-num">03</span>
+            <span class="how-icon"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3>Pick a time</h3>
+            <p>Choose a slot that suits your day. Your trusted provider takes it from there.</p>
+          </li>
+          <li class="how-step" data-reveal>
+            <span class="how-num">04</span>
+            <span class="how-icon"><svg aria-hidden="true"><use href="#i-coffee"/></svg></span>
+            <h3>Sit back &amp; relax</h3>
+            <p>It's handled at your doorstep while you get on with your day.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section class="section install" id="install" aria-labelledby="install-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Get the App</p>
+          <h2 id="install-title">Kyrodi on your home screen. <em>No app store</em> needed.</h2>
+          <p class="section-lead">Kyrodi is a web app, so you can add it straight from your browser. It opens full-screen like any other app, takes seconds, and uses almost no storage.</p>
+        </header>
+
+        <div class="install-perks" data-reveal>
+          <span><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg> Installs in seconds</span>
+          <span><svg class="ic" aria-hidden="true"><use href="#i-feather"/></svg> Tiny, no heavy download</span>
+          <span><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg> Always the latest version</span>
+        </div>
+
+        <!-- Shown only inside WhatsApp / Instagram / Facebook in-app browsers -->
+        <div class="inapp-banner" id="inapp-banner" role="note" hidden>
+          <span class="inapp-icon"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg></span>
+          <div class="inapp-text">
+            <strong>Opened this from WhatsApp?</strong>
+            <p data-inapp-msg>To install, open this page in your phone's main browser first. Tap the <b>⋮</b> or <b>···</b> menu and choose <b>Open in browser</b>.</p>
+          </div>
+          <button class="btn btn-sm btn-outline" type="button" data-copy-link><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg> <span>Copy link</span></button>
+        </div>
+
+        <!-- Smart install card -->
+        <div class="smart-install" data-reveal>
+          <svg class="smart-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+          <div class="smart-text">
+            <strong data-install-title>Get Kyrodi on your phone</strong>
+            <p data-install-status>Follow the quick steps below for your phone.</p>
+          </div>
+          <div class="smart-actions">
+            <button class="btn btn-primary" type="button" id="install-btn" data-install-btn>
+              <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> <span data-install-label>Install app</span>
+            </button>
+            <a class="btn btn-ghost" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi</a>
+          </div>
+        </div>
+
+        <div class="platform-tabs" role="tablist" aria-label="Choose your phone">
+          <button class="tab tab--android" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="true" type="button">
+            <svg class="ic" aria-hidden="true"><use href="#i-android"/></svg>
+            <span>Android</span>
+            <small>Chrome</small>
+          </button>
+          <button class="tab tab--ios" role="tab" id="tab-ios" aria-controls="panel-ios" aria-selected="false" tabindex="-1" type="button">
+            <svg class="ic" aria-hidden="true"><use href="#i-apple"/></svg>
+            <span>iPhone</span>
+            <small>Safari</small>
+          </button>
+          <span class="tab-indicator" aria-hidden="true"></span>
+        </div>
+
+        <!-- ANDROID PANEL -->
+        <div class="panel panel--android" role="tabpanel" id="panel-android" aria-labelledby="tab-android" tabindex="0">
+          <div class="panel-meta">
+            <span class="platform-badge platform-badge--android"><svg class="ic" aria-hidden="true"><use href="#i-android"/></svg> Android</span>
+            <span class="panel-hint">Use <b>Google Chrome</b> · 3 quick steps</span>
+          </div>
+          <ol class="steps" aria-label="Install on Android">
+            <li class="step">
+              <div class="phone phone--android" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb sb--android"><span>9:41</span><span class="sb-cam"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="ch-bar">
+                    <span class="ch-home"></span>
+                    <span class="ch-url"><svg><use href="#i-shield"/></svg>app.kyrodi.com</span>
+                    <span class="ch-dots"><svg><use href="#i-dots-v"/></svg></span>
+                  </div>
+                  <div class="mini-app">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                    <div class="ma-tiles">
+                      <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                      <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                    </div>
+                    <div class="ma-promo"><span>Fresh &amp; shining,<br>every morning</span></div>
+                    <div class="ma-card"><p class="ma-card-t">Book in seconds</p><p class="ma-card-s">Trusted helpers in your society</p></div>
+                    <div class="ma-btn">Book a service</div>
+                  </div>
+                  <span class="tap tap--url"></span>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">1</span>
+                <h3>Open Kyrodi in Chrome</h3>
+                <p>Visit <a href="https://app.kyrodi.com" rel="noopener">app.kyrodi.com</a> in the Chrome browser.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="phone phone--android" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb sb--android"><span>9:41</span><span class="sb-cam"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="ch-bar">
+                    <span class="ch-home"></span>
+                    <span class="ch-url"><svg><use href="#i-shield"/></svg>app.kyrodi.com</span>
+                    <span class="ch-dots is-active"><svg><use href="#i-dots-v"/></svg></span>
+                  </div>
+                  <div class="mini-app is-dim">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                    <div class="ma-tiles">
+                      <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                      <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                    </div>
+                    <div class="ma-promo"><span>Fresh &amp; shining,<br>every morning</span></div>
+                  </div>
+                  <div class="ch-menu">
+                    <span>New tab</span>
+                    <span>History</span>
+                    <span>Bookmarks</span>
+                    <span>Share…</span>
+                    <span class="is-hl"><svg><use href="#i-download"/></svg>Install app<i class="tap tap--menu"></i></span>
+                    <span>Desktop site</span>
+                    <span>Settings</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">2</span>
+                <h3>Tap “Install app”</h3>
+                <p>Tap the <b>⋮</b> menu, then <b>Install app</b> or <b>Add to Home screen</b>. Chrome may also show an install banner at the bottom.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="phone phone--android" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb sb--android"><span>9:41</span><span class="sb-cam"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="ch-bar">
+                    <span class="ch-home"></span>
+                    <span class="ch-url"><svg><use href="#i-shield"/></svg>app.kyrodi.com</span>
+                    <span class="ch-dots"><svg><use href="#i-dots-v"/></svg></span>
+                  </div>
+                  <div class="mini-app is-dim">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                    <div class="ma-tiles">
+                      <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                      <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                    </div>
+                    <div class="ma-promo"><span>Fresh &amp; shining,<br>every morning</span></div>
+                  </div>
+                  <div class="scrim"></div>
+                  <div class="a-dialog">
+                    <p class="a-dialog-t">Install app</p>
+                    <div class="a-dialog-app">
+                      <svg><use href="#i-logo"/></svg>
+                      <div><strong>Kyrodi</strong><small>app.kyrodi.com</small></div>
+                    </div>
+                    <div class="a-dialog-btns"><span>Cancel</span><span class="is-hl">Install<i class="tap tap--btn"></i></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">3</span>
+                <h3>Confirm installation</h3>
+                <p>Tap <b>Install</b> in the pop-up to confirm.</p>
+              </div>
+            </li>
+            <li class="step step--done">
+              <div class="phone phone--android" aria-hidden="true">
+                <div class="phone__screen home-screen home-screen--android">
+                  <div class="sb sb--android sb--light"><span>9:41</span><span class="sb-cam"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="hs-clock">9:41<small>Thursday, 30 Oct</small></div>
+                  <div class="hs-grid">
+                    <span class="hs-app"><i></i><b></b></span><span class="hs-app"><i></i><b></b></span><span class="hs-app"><i></i><b></b></span><span class="hs-app"><i></i><b></b></span>
+                    <span class="hs-app"><i></i><b></b></span><span class="hs-app"><i></i><b></b></span><span class="hs-app"><i></i><b></b></span>
+                    <span class="hs-app hs-app--kyrodi"><svg><use href="#i-logo"/></svg><b>Kyrodi</b></span>
+                  </div>
+                  <div class="hs-search"></div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num step-num--done"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+                <h3>You're all set</h3>
+                <p>Kyrodi is now on your home screen. Tap it to open, just like any app.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="swipe-hint" aria-hidden="true">Swipe to see all steps <svg class="ic"><use href="#i-arrow"/></svg></p>
+          <p class="panel-tip"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg> Opened from WhatsApp? Tap <b>⋮</b> at the top right and choose <b>Open in Chrome</b> first.</p>
+        </div>
+
+        <!-- IOS PANEL -->
+        <div class="panel panel--ios" role="tabpanel" id="panel-ios" aria-labelledby="tab-ios" tabindex="0" hidden>
+          <div class="panel-meta">
+            <span class="platform-badge platform-badge--ios"><svg class="ic" aria-hidden="true"><use href="#i-apple"/></svg> iPhone</span>
+            <span class="panel-hint">Use <b>Safari</b> · 4 quick steps</span>
+          </div>
+          <ol class="steps" aria-label="Install on iPhone">
+            <li class="step">
+              <div class="phone phone--ios" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb"><span>9:41</span><span class="sb-island"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="mini-app mini-app--ios">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                    <div class="ma-tiles">
+                      <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                      <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                    </div>
+                    <div class="ma-promo"><span>Fresh &amp; shining,<br>every morning</span></div>
+                    <div class="ma-card"><p class="ma-card-t">Book in seconds</p><p class="ma-card-s">Trusted helpers in your society</p></div>
+                  </div>
+                  <div class="sf-bottom">
+                    <span class="sf-url"><svg><use href="#i-shield"/></svg>app.kyrodi.com<span class="tap tap--url"></span></span>
+                    <div class="sf-tools"><i class="sf-back"></i><i class="sf-fwd"></i><svg><use href="#i-share-ios"/></svg><i class="sf-book"></i><i class="sf-tabs"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">1</span>
+                <h3>Open Kyrodi in Safari</h3>
+                <p>Visit <a href="https://app.kyrodi.com" rel="noopener">app.kyrodi.com</a> in Safari, the compass-icon browser.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="phone phone--ios" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb"><span>9:41</span><span class="sb-island"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="mini-app mini-app--ios">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                    <div class="ma-tiles">
+                      <div class="ma-tile ma-tile--car"><svg><use href="#i-car"/></svg><span>Vehicle wash</span></div>
+                      <div class="ma-tile ma-tile--iron"><svg><use href="#i-iron"/></svg><span>Ironing</span></div>
+                    </div>
+                    <div class="ma-promo"><span>Fresh &amp; shining,<br>every morning</span></div>
+                    <div class="ma-card"><p class="ma-card-t">Book in seconds</p><p class="ma-card-s">Trusted helpers in your society</p></div>
+                  </div>
+                  <div class="sf-bottom">
+                    <span class="sf-url"><svg><use href="#i-shield"/></svg>app.kyrodi.com</span>
+                    <div class="sf-tools"><i class="sf-back"></i><i class="sf-fwd"></i><span class="sf-share is-hl"><svg><use href="#i-share-ios"/></svg><span class="tap tap--share"></span></span><i class="sf-book"></i><i class="sf-tabs"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">2</span>
+                <h3>Tap the Share icon</h3>
+                <p>Tap <span class="inline-icon"><svg aria-hidden="true"><use href="#i-share-ios"/></svg></span> <b>Share</b> in the toolbar at the bottom (on iPad, it's at the top).</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="phone phone--ios" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb"><span>9:41</span><span class="sb-island"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="mini-app mini-app--ios is-dim">
+                    <div class="ma-top"><svg class="ma-logo"><use href="#i-logo"/></svg><div><p class="ma-hello">Good morning</p><p class="ma-flat">Tower B · 1204</p></div></div>
+                  </div>
+                  <div class="scrim"></div>
+                  <div class="ios-sheet">
+                    <div class="ios-sheet-head"><svg><use href="#i-logo"/></svg><div><strong>Kyrodi</strong><small>app.kyrodi.com</small></div></div>
+                    <div class="ios-share-row"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="ios-list">
+                      <span>Copy</span>
+                      <span>Add to Reading List</span>
+                      <span>Add Bookmark</span>
+                      <span class="is-hl">Add to Home Screen <svg><use href="#i-plus-square"/></svg><i class="tap tap--row"></i></span>
+                      <span>Find on Page</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">3</span>
+                <h3>Select “Add to Home Screen”</h3>
+                <p>Scroll down the share sheet and tap <b>Add to Home Screen</b> <span class="inline-icon"><svg aria-hidden="true"><use href="#i-plus-square"/></svg></span>.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="phone phone--ios" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="sb"><span>9:41</span><span class="sb-island"></span><span class="sb-icons"><i></i><i></i><i></i></span></div>
+                  <div class="ios-add">
+                    <div class="ios-add-nav"><span>Cancel</span><strong>Add to Home Screen</strong><span class="is-hl">Add<i class="tap tap--add"></i></span></div>
+                    <div class="ios-add-card">
+                      <svg><use href="#i-logo"/></svg>
+                      <div><span class="ios-add-name">Kyrodi</span><small>https://app.kyrodi.com</small></div>
+                    </div>
+                    <p class="ios-add-note">An icon will be added to your Home Screen so you can quickly access this website.</p>
+                    <div class="ios-kb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-copy">
+                <span class="step-num">4</span>
+                <h3>Tap “Add”</h3>
+                <p>Tap <b>Add</b> at the top right. Kyrodi now appears on your Home Screen.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="swipe-hint" aria-hidden="true">Swipe to see all steps <svg class="ic"><use href="#i-arrow"/></svg></p>
+          <p class="panel-tip"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg> Opened from WhatsApp? Tap the <b>compass</b> icon or choose <b>Open in Safari</b> first. Safari is the most reliable way to add Kyrodi to your Home Screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET STARTED -->
+    <section class="cta" id="get-started" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-card" data-reveal>
+          <div class="cta-copy">
+            <p class="kicker kicker--light">Get Started</p>
+            <h2 id="cta-title">Give your weekends back to <em>yourself</em>.</h2>
+            <p>Join your neighbours on Kyrodi. Your first booking takes less time than finding the ironing person's number.</p>
+            <div class="cta-actions">
+              <a class="btn btn-gold btn-lg" href="https://app.kyrodi.com" rel="noopener">Open Kyrodi <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-ghost-light btn-lg" href="#install"><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> Install the app</a>
+            </div>
+          </div>
+          <div class="cta-photos" aria-hidden="true">
+            <img src="images/photos/vehicle-washing.jpg" width="1100" height="733" alt="" loading="lazy">
+            <img src="images/photos/clothes-ironing.jpg" width="1100" height="733" alt="" loading="lazy">
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kaamly. All rights reserved.</p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand brand--light" aria-label="Kyrodi home">
+          <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="brand-word">Kyrodi</span>
+        </a>
+        <p>Everyday Services, with a Personal Touch.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#why">Why Kyrodi</a>
+        <a href="#how">How it works</a>
+        <a href="#install">Get the app</a>
+        <a href="https://app.kyrodi.com" rel="noopener">Open Kyrodi</a>
+      </nav>
+    </div>
+    <div class="container footer-base">
+      <p>&copy; <span data-year>2026</span> Kyrodi. All rights reserved.</p>
+      <p>Made with care for every society.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" data-sticky-cta aria-hidden="true">
+    <svg class="sticky-logo"><use href="#i-logo"/></svg>
+    <span>Everyday services, at your door</span>
+    <a class="btn btn-primary btn-sm" href="https://app.kyrodi.com" rel="noopener" tabindex="-1">Open Kyrodi</a>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

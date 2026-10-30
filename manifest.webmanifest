@@ -1,0 +1,19 @@
+{
+  "name": "Kyrodi — Everyday Services",
+  "short_name": "Kyrodi",
+  "description": "Everyday Services, with a Personal Touch. Doorstep vehicle washing, clothes ironing and more for your society.",
+  "id": "./",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF7F0",
+  "theme_color": "#0F3D3A",
+  "lang": "en-IN",
+  "categories": ["lifestyle", "utilities"],
+  "icons": [
+    { "src": "images/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "images/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "images/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

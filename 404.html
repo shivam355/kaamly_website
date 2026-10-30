@@ -1,45 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page not found — Kaamly</title>
-  <meta name="description" content="The page you're looking for doesn't exist.">
-  <link rel="icon" type="image/png" href="/images/logo.png">
+  <title>Page not found — Kyrodi</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0F3D3A">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="/index.html" class="brand"><img src="/images/logo.png" alt="">Kaamly</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <nav class="nav">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="not-found">
-      <div class="container">
-        <p class="code">404</p>
-        <h1>Page not found</h1>
-        <p>Sorry, we couldn't find the page you're looking for.</p>
-        <a href="/index.html" class="btn btn-primary">Back to home</a>
+  <main class="not-found">
+    <div>
+      <p class="code">404</p>
+      <h1>This page took the day off.</h1>
+      <p>We couldn't find what you were looking for, but your everyday services are just a tap away.</p>
+      <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://app.kyrodi.com" class="btn btn-primary" rel="noopener">Open Kyrodi</a>
+        <a href="/" class="btn btn-ghost">Back to home</a>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kaamly. All rights reserved.</p>
     </div>
-  </footer>
-
-  <script src="/js/main.js"></script>
+  </main>
 </body>
 </html>
